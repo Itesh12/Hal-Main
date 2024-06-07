@@ -1,0 +1,45 @@
+[
+  {
+   "date": "13 August",
+     "location": "Noida, Uttar Pradesh",
+     "tempMin": "30",
+    "tempMax":"32",
+  "pressure":"990",
+    "humidity": "342",
+    "rain": "50"
+  }, {
+   "date": "14 August",
+     "location": "Noida, Uttar Pradesh",
+     "tempMin": "30",
+    "tempMax":"28",
+  "pressure":"990",
+    "humidity": "342",
+    "rain": "25"
+  }, {
+   "date": "15 August",
+     "location": "Noida, Uttar Pradesh",
+     "tempMin": "30",
+    "tempMax":"27",
+  "pressure":"990",
+    "humidity": "342",
+    "rain": "40"
+  }, {
+   "date": "16 August",
+     "location": "Noida, Uttar Pradesh",
+     "tempMin": "30",
+    "tempMax":"32",
+  "pressure":"990",
+    "humidity": "342",
+    "rain": "90"
+  }, {
+   "date": "17 August",
+     "location": "Noida, Uttar Pradesh",
+     "tempMin": "30",
+    "tempMax":"33",
+  "pressure":"990",
+    "humidity": "342",
+    "rain": "86"
+  }
+
+
+]

@@ -1,0 +1,127 @@
+name: kisaan_station
+description: A new Flutter project.
+
+# Prevent accidental publishing to pub.dev.
+publish_to: 'none'
+
+version: 2.2.1+21
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  another_flushbar: ^1.12.29
+  auto_route: ^7.8.4
+  auto_size_text: ^3.0.0
+  carousel_slider: ^4.1.1
+  connectivity_plus: ^5.0.2
+  dio: ^4.0.4
+  dotted_border: ^2.0.0+2
+  firebase_dynamic_links: ^5.0.7
+  flutter_datetime_picker: ^1.5.1
+  flutter_inappwebview: ^5.4.3+7
+  flutter_linkify: ^6.0.0
+  flutter_riverpod: ^2.0.2
+  flutter_screenutil: ^5.5.3+2
+  flutter_sequence_animation: ^4.0.0-nullsafety
+  flutter_svg: ^2.0.9
+  geocoding: ^2.0.4
+  get_time_ago: ^1.1.3
+  google_map_location_picker_flutter: ^2.0.4
+  google_maps_flutter: ^2.2.0
+  image_picker: ^1.0.4
+  intl: ^0.18.0
+  json_annotation: ^4.8.1
+  latlong2: ^0.9.0
+  location: ^5.0.3
+  map_picker: ^0.0.3
+  path_provider: ^2.1.1
+  pretty_dio_logger: ^1.1.1
+  readmore: ^2.2.0
+  reorderable_grid: ^1.0.4
+  share_plus: ^7.2.1
+  shared_preferences: ^2.0.13
+  shimmer: ^3.0.0
+  sms_autofill: ^2.2.0
+  swipeable_card_stack: ^0.0.5
+  tab_indicator_styler: ^2.0.0
+  timelines: ^0.1.0
+  url_launcher: ^6.2.6
+  video_player: ^2.4.5
+  visibility_detector: ^0.4.0+2
+  webview_flutter: ^3.0.4
+  youtube_player_flutter: ^8.0.0
+  geolocator: ^9.0.2
+  firebase_core: ^2.4.1
+  firebase_messaging: ^14.2.1
+  flutter_local_notifications: ^16.2.0
+  flutter_native_image: ^0.0.6+1
+  timeago: ^3.0.3
+  new_version_plus: ^0.0.3
+  permission_handler: ^11.0.0
+  flutter_polyline_points: ^1.0.0
+  hive_flutter: ^1.1.0
+  hive: ^2.2.3
+  hive_generator: ^2.0.1
+  analyzer: ^6.2.0
+  cached_network_image: ^3.3.0
+  persistent_bottom_nav_bar: ^5.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  auto_route_generator: ^7.3.2
+  build_runner: ^2.4.7
+  flutter_switch: ^0.3.2
+  freezed: ^2.1.0+1
+  json_serializable: ^6.7.1
+  flutter_launcher_icons: ^0.13.1
+
+
+flutter_launcher_icons:
+    android: true
+    ios: true
+    min_sdk_android: 21
+    image_path: "assets/images/logo_foreground.png"
+    adaptive_icon_foreground: "assets/images/logo_foreground.png"
+    adaptive_icon_background: "#ffffff"
+
+dependency_overrides:
+  geolocator: ^9.0.2
+  geolocator_android: 4.1.4
+
+flutter:
+  uses-material-design: true
+
+  # Enable generation of localized Strings from arb files.
+  generate: true
+
+  assets:
+    # Add assets from the images directory to the application.
+    - assets/images/wlcm_screen/
+    - assets/images/auth_image/
+    - assets/images/
+    - assets/notification_Data.json
+    - assets/weather_Data.json
+
+  fonts:
+    - family: Mukta
+      fonts:
+        - asset: assets/fonts/Mukta-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Mukta-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Mukta-SemiBold.ttf
+          weight: 600
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
