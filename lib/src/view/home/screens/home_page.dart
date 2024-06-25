@@ -6,7 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kisaan_station/src/controller/notification_controller.dart';
+import 'package:kisaan_station/src/view/chat/chat_list/chat_list_page.dart';
+import 'package:kisaan_station/src/view/chat/chat_page.dart';
 import 'package:kisaan_station/src/view/home/widget/quick_buttons.dart';
 import 'package:kisaan_station/src/view/social/post/widgets/paged_post.dart';
 import 'package:new_version_plus/new_version_plus.dart';
@@ -131,6 +132,21 @@ class _HomePageState extends ConsumerState<HomePage>
                 ),
               ),
               actions: [
+                IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ChatListScreen(),
+                      ),
+                    );
+                  },
+                  icon: SvgPicture.asset(
+                    "assets/images/chat.svg",
+                    height: 22,
+                    width: 23,
+                  ),
+                ),
                 InkWell(
                   onTap: () async {
                     await context.router.push(NotificationRoute());

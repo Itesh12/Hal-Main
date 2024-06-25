@@ -53,6 +53,19 @@ class CreatePostBottom extends ConsumerWidget {
           ),
           const Divider(height: 2),
           CreatePostBottomOption(
+            icon: 'assets/images/Video.svg',
+            label: 'Add Reels',
+            onTap: () async {
+              final isCamera =
+                  await ref.read(mediaProvider).chooseSource(context);
+
+              if (isCamera != null) {
+                ref.read(createPostController).chooseVideo(isCamera: isCamera);
+              }
+            },
+          ),
+          const Divider(height: 2),
+          CreatePostBottomOption(
             icon: 'assets/images/youtube.svg',
             label: 'Add youtube',
             onTap: () {

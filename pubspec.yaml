@@ -70,6 +70,7 @@ dependencies:
   analyzer: ^6.2.0
   cached_network_image: ^3.3.0
   persistent_bottom_nav_bar: ^5.0.2
+  video_thumbnail: ^0.5.3
 
 dev_dependencies:
   flutter_test:
