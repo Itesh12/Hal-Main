@@ -11,7 +11,7 @@ import 'package:kisaan_station/src/util/services/shared_preferences.dart';
 import 'package:kisaan_station/src/view/Farm/widget/farm_tile.dart';
 
 import '../../../global_providers.dart';
-import '../../util/search_bar.dart';
+// import '../../util/search_bar.dart';
 import '../widget/dialogs/farm_location_dailog.dart';
 
 @RoutePage()
@@ -31,6 +31,7 @@ class _FarmPageState extends ConsumerState<FarmListPage> {
     farmList = farmList;
     super.initState();
   }
+
   bool newFarmClicked = false;
 
   final TextEditingController _farmsearchTextEditingController =
@@ -81,13 +82,14 @@ class _FarmPageState extends ConsumerState<FarmListPage> {
                         ),
                       )
                     : Expanded(
-                      child: ListView(
-                        children: [
-                          NoFarmWidget(
-                              farmsearchController: _farmsearchTextEditingController),
-                        ],
+                        child: ListView(
+                          children: [
+                            NoFarmWidget(
+                                farmsearchController:
+                                    _farmsearchTextEditingController),
+                          ],
+                        ),
                       ),
-                    ),
             ],
           ),
         ));

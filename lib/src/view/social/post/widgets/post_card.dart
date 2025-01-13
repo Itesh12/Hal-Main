@@ -168,8 +168,9 @@ class _TextPreviewWidgetState extends State<TextPreviewWidget> {
             children: [
               if (widget.post.postDescription.replaceAll(" ", "").length >= 250)
                 Linkify(
-                  onOpen: (link) async{
-                    context.router.push(InAppViewRoute(url: Uri.parse(link.url)));
+                  onOpen: (link) async {
+                    context.router
+                        .push(InAppViewRoute(url: Uri.parse(link.url)));
                   },
                   text: widget.post.postDescription,
                   maxLines: descTextShowFlag ? null : 5,
@@ -178,8 +179,9 @@ class _TextPreviewWidgetState extends State<TextPreviewWidget> {
                 )
               else
                 Linkify(
-                  onOpen: (link) async{
-                    context.router.push(InAppViewRoute(url: Uri.parse(link.url)));
+                  onOpen: (link) async {
+                    context.router
+                        .push(InAppViewRoute(url: Uri.parse(link.url)));
                   },
                   text: widget.post.postDescription,
                   style:
@@ -314,7 +316,7 @@ class _InAppViewState extends State<InAppViewPage> {
           centerTitle: false,
           title: Text(
             widget.url.toString(),
-            style: const TextStyle(fontSize: 15,fontWeight: FontWeight.w500),
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
           ),
           actions: [
             Padding(
@@ -367,7 +369,7 @@ class _InAppViewState extends State<InAppViewPage> {
         body: Stack(
           children: [
             InAppWebView(
-              initialUrlRequest: URLRequest(url: widget.url),
+              initialUrlRequest: URLRequest(url: WebUri(widget.url.toString())),
               onWebViewCreated: (InAppWebViewController controller) {
                 webView = controller;
               },

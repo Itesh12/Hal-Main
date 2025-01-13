@@ -5,7 +5,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:kisaan_station/src/app/router/auth_guard.dart';
 import 'package:kisaan_station/src/app/router/router.gr.dart';
-import 'package:kisaan_station/src/view/profile/screens/account_privacy_page.dart';
 
 class AppRouteObserver extends AutoRouterObserver {
   @override
@@ -51,7 +50,10 @@ class AppRouter extends $AppRouter {
         guards: [AuthGuard()],
         page: SellerRoute.page,
         children: [
-          AutoRoute(path: '', page: SellerHomeRoute.page,),
+          AutoRoute(
+            path: '',
+            page: SellerHomeRoute.page,
+          ),
           AutoRoute(path: 'SellerProfile', page: SellerProfileRoute.page),
           AutoRoute(path: '', page: MySellerServicesRoute.page),
           AutoRoute(
@@ -69,7 +71,7 @@ class AppRouter extends $AppRouter {
           AutoRoute(path: '', page: SellerAccountRoute.page),
           AutoRoute(path: 'SellerProfile', page: SellerProfileRoute.page),
         ]),
-    AutoRoute(page: MyFarmNetworkRoute.page , path: "/myFarmNetwork"),
+    AutoRoute(page: MyFarmNetworkRoute.page, path: "/myFarmNetwork"),
 
     AutoRoute(path: '/aboutOrder', page: AboutOrderRoute.page),
     AutoRoute(path: '/sellersubmitPage', page: SellerSubmitRoute.page),

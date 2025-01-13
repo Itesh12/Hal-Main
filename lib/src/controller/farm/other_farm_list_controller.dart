@@ -6,7 +6,10 @@ import 'package:kisaan_station/src/model/farm/farm_entity.dart';
 import '../../infrastructure/http/app_exception.dart';
 
 class OtherFarmListNotifier extends ChangeNotifier {
-  OtherFarmListNotifier(this.ref, {required this.hsId,}) {
+  OtherFarmListNotifier(
+    this.ref, {
+    required this.hsId,
+  }) {
     initState();
   }
 
@@ -44,7 +47,7 @@ class OtherFarmListNotifier extends ChangeNotifier {
     try {
       final list = await ref
           .read(farmRepoProvider)
-          .getMyFarmByHsId( page: _page, hsId: hsId);
+          .getMyFarmByHsId(page: _page, hsId: hsId);
       if (list.isNotEmpty) {
         _farmsList = list;
         notifyListeners();
@@ -90,13 +93,13 @@ class OtherFarmListNotifier extends ChangeNotifier {
   }
 
   void _handleError(Object e, {required bool isInitialLoad}) {
-    final isError = isInitialLoad ? _isFirstError : _isLoadMoreError;
+    // final isError = isInitialLoad ? _isFirstError : _isLoadMoreError;
     String? errorMessage;
 
     if (e is AppException) {
       e.whenOrNull(
         connectivity: () =>
-        errorMessage = "Please check your internet connection",
+            errorMessage = "Please check your internet connection",
         errorWithMessage: (message) => errorMessage = message,
         error: () => errorMessage = "Something went wrong",
         unauthorized: () => errorMessage = "Session Expired...",

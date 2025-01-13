@@ -9,7 +9,7 @@ import 'package:kisaan_station/src/constants/colors.dart';
 import 'package:kisaan_station/src/util/download/download_pdf.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../model/farm/crop_detail.dart';
+// import '../../model/farm/crop_detail.dart';
 import '../../model/farm/crop_report_model.dart';
 import '../../model/farm/farm_entity.dart';
 
@@ -159,11 +159,10 @@ class ReportTile extends StatelessWidget {
                         }
                       });
                       return InkWell(
-                        onTap: () async{
+                        onTap: () async {
                           print("Downloading..");
 
                           await launchUrl(Uri.parse(cropReport.url));
-
                         },
                         child: Stack(
                           alignment: Alignment.center,

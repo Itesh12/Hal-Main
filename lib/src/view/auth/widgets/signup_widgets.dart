@@ -1,4 +1,3 @@
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -62,13 +61,16 @@ class _SignUpCommonState extends State<SignUpCommon> {
             //     fit: BoxFit.fill,
             //   ),
             // ),
-            if (fromSignUp) Image.asset(
-              'assets/images/auth_image/Frame2.png',
-              fit: BoxFit.fill,
-            ) else Image.asset(
-              'assets/images/auth_image/Frame.png',
-              fit: BoxFit.fill,
-            ) ,
+            if (fromSignUp)
+              Image.asset(
+                'assets/images/auth_image/Frame2.png',
+                fit: BoxFit.fill,
+              )
+            else
+              Image.asset(
+                'assets/images/auth_image/Frame.png',
+                fit: BoxFit.fill,
+              ),
             SingleChildScrollView(
               child: Column(
                 children: [
@@ -88,7 +90,6 @@ class _SignUpCommonState extends State<SignUpCommon> {
                         5.verticalSpace,
                         TextFormField(
                           focusNode: _phoneFocus,
-
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: mediumOrange,
@@ -109,7 +110,7 @@ class _SignUpCommonState extends State<SignUpCommon> {
                           onChanged: (val) {
                             mobile = val;
 
-                            if(val.length == 10){
+                            if (val.length == 10) {
                               _phoneFocus.nextFocus();
                             }
                           },
@@ -129,7 +130,8 @@ class _SignUpCommonState extends State<SignUpCommon> {
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge!
-                                  .copyWith(fontWeight: FontWeight.w500, color: grey),
+                                  .copyWith(
+                                      fontWeight: FontWeight.w500, color: grey),
                             ),
                             InkWell(
                                 onTap: () {
@@ -207,6 +209,11 @@ class _SignUpCommonState extends State<SignUpCommon> {
                   72.verticalSpace,
                   const PrivacyPolicy(),
                   20.verticalSpace,
+                  Image.asset(
+                    'assets/images/droneacharya_logo.png',
+                    height: 130.h,
+                    width: 200.w,
+                  ),
                 ],
               ),
             )
@@ -251,7 +258,8 @@ class PrivacyPolicy extends StatelessWidget {
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       context.pushRoute(WebRoute(
-                          url: "https://ojasspace.com/privacy-policy", title: "PrivacyPolicies"));
+                          url: "https://ojasspace.com/privacy-policy",
+                          title: "PrivacyPolicies"));
                     },
                   style: const TextStyle(color: mediumOrange)),
             ],

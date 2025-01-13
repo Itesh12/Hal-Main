@@ -36,15 +36,18 @@ class PostListNotifier extends ChangeNotifier {
   String get loadMoreErrorMessage => _loadMoreErrorMessage;
   List<Post> get posts => _posts;
 
-  late Box<Post> box =  Hive.box<Post>('postsBox');
+  late Box<Post> box = Hive.box<Post>('postsBox');
 
-  static const int _maxPostsInMemory = 15;
-  static const int _fetchThreshold = 200;
+  // static const int _maxPostsInMemory = 15;
+  // static const int _fetchThreshold = 200;
 
   void _handleScroll() {
-    if (controller.position.pixels == controller.position.maxScrollExtent && _hasNextPage) {
+    if (controller.position.pixels == controller.position.maxScrollExtent &&
+        _hasNextPage) {
       _loadMore();
-    } else if (controller.position.pixels == controller.position.minScrollExtent+500 && _page > 1) {
+    } else if (controller.position.pixels ==
+            controller.position.minScrollExtent + 500 &&
+        _page > 1) {
       _loadPrevious();
     }
   }
@@ -59,7 +62,6 @@ class PostListNotifier extends ChangeNotifier {
         // Clear the box and add new items to it
         await box.clear();
         await box.addAll(_posts);
-
       }
       _updateLoadingState();
     } catch (e) {
@@ -67,13 +69,12 @@ class PostListNotifier extends ChangeNotifier {
       _handleError(e, isInitialLoad: true);
     }
   }
-  bool isDataStale(Post post) {
 
+  bool isDataStale(Post post) {
     return false;
     // Implement your logic to determine if the data is stale
     // For example, if the post timestamp is older than a certain threshold
   }
-
 
   Future<void> _loadMore() async {
     if (!_isLoadMoreRunning && !_isFirstLoadRunning) {
@@ -81,8 +82,7 @@ class PostListNotifier extends ChangeNotifier {
       notifyListeners();
       _page += 1;
 
-
-        _fetchPosts();
+      _fetchPosts();
     }
   }
 
@@ -94,7 +94,9 @@ class PostListNotifier extends ChangeNotifier {
       await _fetchPosts(isLoadingPrevious: true);
     }
   }
-  void _updateLoadingState({bool isFirstLoadRunning = false, bool isLoadMoreRunning = false}) {
+
+  void _updateLoadingState(
+      {bool isFirstLoadRunning = false, bool isLoadMoreRunning = false}) {
     _isFirstLoadRunning = isFirstLoadRunning;
     _isLoadMoreRunning = isLoadMoreRunning;
     notifyListeners();
@@ -128,7 +130,8 @@ class PostListNotifier extends ChangeNotifier {
 
     if (e is AppException) {
       e.whenOrNull(
-        connectivity: () => errorMessage = "Please check your internet connection",
+        connectivity: () =>
+            errorMessage = "Please check your internet connection",
         errorWithMessage: (message) => errorMessage = message,
         error: () => errorMessage = "Something went wrong",
         unauthorized: () => errorMessage = "Session Expired...",
@@ -147,7 +150,6 @@ class PostListNotifier extends ChangeNotifier {
     _updateLoadingState();
   }
 
-
   int deletePost(Post post) {
     final index = _posts.indexOf(post);
     _posts.remove(post);
@@ -156,8 +158,10 @@ class PostListNotifier extends ChangeNotifier {
   }
 
   void scrollToTop() {
-    controller.animateTo(0, duration: const Duration(milliseconds: 400), curve: Curves.easeIn);
+    controller.animateTo(0,
+        duration: const Duration(milliseconds: 400), curve: Curves.easeIn);
   }
+
   Future<void> hide({
     required String postId,
     required BuildContext context,
@@ -187,9 +191,8 @@ class PostListNotifier extends ChangeNotifier {
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
       await Future.delayed(const Duration(seconds: 3), () async {
         if (!undo) {
-          await ref
-              .read(postProvider)
-              .hidePost(otherUserId: otherUserId, userId: userId, postId: postId);
+          await ref.read(postProvider).hidePost(
+              otherUserId: otherUserId, userId: userId, postId: postId);
         }
       });
     }
@@ -205,7 +208,6 @@ class PostListNotifier extends ChangeNotifier {
     await _firstLoad();
   }
 
-
   @override
   void dispose() {
     controller.removeListener(_handleScroll);
@@ -213,18 +215,6 @@ class PostListNotifier extends ChangeNotifier {
     super.dispose();
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import 'package:flutter/material.dart';
 // import 'package:flutter_riverpod/flutter_riverpod.dart';

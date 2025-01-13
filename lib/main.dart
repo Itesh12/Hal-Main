@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:kisaan_station/firebase_options.dart';
 import 'package:kisaan_station/notificationservices/local_notifications_service.dart';
 import 'package:kisaan_station/src/model/social/post/post_model.dart';
 import 'package:kisaan_station/src/model/user/media_model.dart';
@@ -39,9 +40,11 @@ void main() async {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
 
-  final platformType = detectPlatformType();  
+  final platformType = detectPlatformType();
 
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   FirebaseMessaging.onBackgroundMessage(backgroundHandler);
   LocalNotificationService.initialize();

@@ -8,7 +8,7 @@ import 'package:kisaan_station/src/app/router/router.gr.dart';
 import '../../../global_providers.dart';
 import '../../constants/colors.dart';
 import '../../infrastructure/http/app_exception.dart';
-import '../../model/farm/crop_detail.dart';
+// import '../../model/farm/crop_detail.dart';
 import '../../model/farm/farm_entity.dart';
 
 @RoutePage()
@@ -160,7 +160,7 @@ class FarmCropDetailPage extends StatelessWidget {
                         try {
                           await ref
                               .read(farmRepoProvider)
-                              .requestCropReport(crop.id!,context);
+                              .requestCropReport(crop.id!, context);
 
                           requestPendingSnackBar(context);
                         } on AppException catch (e) {

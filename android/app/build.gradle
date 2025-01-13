@@ -1,3 +1,298 @@
+//////plugins {
+//////    id "com.android.application"
+//////    id "kotlin-android"
+//////    id "dev.flutter.flutter-gradle-plugin"
+//////    id "com.google.gms.google-services"
+//////}
+//////
+//////def localProperties = new Properties()
+//////def localPropertiesFile = rootProject.file('local.properties')
+//////if (localPropertiesFile.exists()) {
+//////    localPropertiesFile.withReader('UTF-8') { reader ->
+//////        localProperties.load(reader)
+//////    }
+//////}
+//////
+////////def flutterRoot = localProperties.getProperty('flutter.sdk')
+////////if (flutterRoot == null) {
+////////    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+////////}
+//////
+//////def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+//////if (flutterVersionCode == null) {
+//////    flutterVersionCode = '1'
+//////}
+//////
+//////def flutterVersionName = localProperties.getProperty('flutter.versionName')
+//////if (flutterVersionName == null) {
+//////    flutterVersionName = '1.0'
+//////}
+//////
+////////apply plugin: 'com.android.application'
+////////apply plugin: 'com.google.gms.google-services'
+////////apply plugin: 'kotlin-android'
+////////apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+//////
+//////
+//////
+//////android {
+//////    compileSdkVersion 34
+//////    namespace "com.kisaanstation.kisaanstation"
+//////    kotlinOptions {
+////////        jvmTarget = JavaVersion.VERSION_17.toString()
+//////        jvmTarget = "17"
+//////    }
+//////
+//////    compileOptions {
+//////        coreLibraryDesugaringEnabled true
+//////        sourceCompatibility = JavaVersion.VERSION_17
+//////        targetCompatibility = JavaVersion.VERSION_17
+//////    }
+//////
+//////    sourceSets {
+//////        main.java.srcDirs += 'src/main/kotlin'
+//////    }
+//////    lintOptions {
+//////        disable 'InvalidPackage'
+//////        checkReleaseBuilds false //<- add this line
+//////        disable 'ResourceLinkingFailed'
+//////    }
+//////    dexOptions {
+//////        preDexLibraries = false
+//////    }
+//////    defaultConfig {
+//////        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+//////        applicationId "com.kisaanstation.kisaanstation"
+//////        minSdkVersion 24
+//////        targetSdkVersion 34
+//////        versionCode flutterVersionCode.toInteger()
+//////        versionName flutterVersionName
+//////        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//////        multiDexEnabled true
+//////    }
+//////
+//////    buildTypes {
+//////        release {
+//////            // TODO: Add your own signing config for the release build.
+//////            // Signing with the debug keys for now, so `flutter run --release` works.
+//////            minifyEnabled false
+//////            shrinkResources false
+//////            signingConfig signingConfigs.debug
+//////        }
+//////    }
+//////}
+//////
+//////flutter {
+//////    source '../..'
+//////}
+//////
+//////dependencies {
+////////    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+//////    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
+//////    implementation platform('com.google.firebase:firebase-bom:30.1.0')
+//////    implementation 'com.google.firebase:firebase-analytics'
+//////    implementation 'com.google.firebase:firebase-dynamic-links:16.0.1'
+//////    implementation ('com.android.support:multidex:2.0.1') {
+//////        exclude module: "play-services-safetynet"
+//////    }
+//////}
+////
+////
+////plugins {
+////    id "com.android.application"
+////    id "kotlin-android"
+////    id "dev.flutter.flutter-gradle-plugin"
+////    id "com.google.gms.google-services"
+////}
+////
+////def localProperties = new Properties()
+////def localPropertiesFile = rootProject.file('local.properties')
+////if (localPropertiesFile.exists()) {
+////    localPropertiesFile.withReader('UTF-8') { reader ->
+////        localProperties.load(reader)
+////    }
+////}
+////
+////def flutterVersionCode = localProperties.getProperty('flutter.versionCode', '1')
+////def flutterVersionName = localProperties.getProperty('flutter.versionName', '1.0')
+////
+////android {
+////    compileSdkVersion 34
+////    namespace "com.kisaanstation.kisaanstation"
+////
+////    defaultConfig {
+////        applicationId "com.kisaanstation.kisaanstation"
+////        minSdkVersion 24
+////        targetSdkVersion 34
+////        versionCode flutterVersionCode.toInteger()
+////        versionName flutterVersionName
+////        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+////        multiDexEnabled true
+////    }
+////
+////    compileOptions {
+////        sourceCompatibility JavaVersion.VERSION_17
+////        targetCompatibility JavaVersion.VERSION_17
+////    }
+////    kotlinOptions {
+////        jvmTarget = '17'
+////    }
+////    kotlin {
+////        jvmToolchain {
+////            languageVersion.set(JavaLanguageVersion.of("11"))
+////        }
+////    }
+////    lintOptions {
+////        disable 'InvalidPackage'
+////        checkReleaseBuilds false
+////        disable 'ResourceLinkingFailed'
+////    }
+////
+////    buildTypes {
+////        release {
+////            minifyEnabled false
+////            shrinkResources false
+////            signingConfig signingConfigs.debug
+////        }
+////    }
+////
+////    sourceSets {
+////        main.java.srcDirs += 'src/main/kotlin'
+////    }
+////}
+////
+////flutter {
+////    source '../..'
+////}
+////
+////dependencies {
+////    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
+////    implementation platform('com.google.firebase:firebase-bom:30.1.0')
+////    implementation 'com.google.firebase:firebase-analytics'
+////    implementation 'com.google.firebase:firebase-dynamic-links:16.0.1'
+////    implementation 'androidx.multidex:multidex:2.0.1'
+////}
+//
+//
+//plugins {
+//    id "com.android.application"
+//    id "kotlin-android"
+//    id "dev.flutter.flutter-gradle-plugin"
+//    id "com.google.gms.google-services"
+//
+//}
+//
+//def localProperties = new Properties()
+//def localPropertiesFile = rootProject.file('local.properties')
+//if (localPropertiesFile.exists()) {
+//    localPropertiesFile.withReader('UTF-8') { reader ->
+//        localProperties.load(reader)
+//    }
+//}
+//
+//def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+//if (flutterVersionCode == null) {
+//    flutterVersionCode = '1'
+//}
+//
+//def flutterVersionName = localProperties.getProperty('flutter.versionName')
+//if (flutterVersionName == null) {
+//    flutterVersionName = '1.0'
+//}
+//
+//android {
+//    compileSdkVersion 34
+//    namespace "com.kisaanstation.kisaanstation"
+//
+//    defaultConfig {
+//        multiDexEnabled true
+//    }
+//
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_17
+//        targetCompatibility JavaVersion.VERSION_17
+//        coreLibraryDesugaringEnabled true
+//    }
+//
+//    kotlinOptions {
+//        jvmTarget = '17'
+//    }
+//    kotlin {
+////        jvmToolchain(17)
+//        jvmToolchain {
+//            languageVersion.set(JavaLanguageVersion.of(17)) // Match your desired Java version
+//        }
+//    }
+//    sourceSets {
+//        main.java.srcDirs += 'src/main/kotlin'
+//    }
+//
+//
+//    dexOptions {
+//        preDexLibraries = false
+//    }
+//
+//    defaultConfig {
+//        applicationId "com.kisaanstation.kisaanstation"
+//        minSdkVersion 24
+//        targetSdkVersion 34
+//        versionCode flutterVersionCode.toInteger()
+//        versionName flutterVersionName
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        multiDexEnabled true
+//    }
+//
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            shrinkResources false
+//            signingConfig signingConfigs.debug
+//        }
+//    }
+//    lint {
+//        checkReleaseBuilds false
+//        disable 'InvalidPackage', 'ResourceLinkingFailed'
+//    }
+//    buildToolsVersion '34.0.0'
+//    ndkVersion '27.0.12077973'
+//}
+//
+//flutter {
+//    source '../..'
+//}
+//
+//dependencies {
+//    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
+//    implementation platform('com.google.firebase:firebase-bom:33.7.0')
+//    implementation 'com.google.firebase:firebase-analytics'
+//    implementation 'com.google.firebase:firebase-dynamic-links:22.1.0'
+//    implementation ('com.android.support:multidex:2.0.1') {
+//        exclude module: "play-services-safetynet"
+//    }
+//    implementation 'androidx.window:window:1.3.0'
+//    implementation 'androidx.window:window-java:1.3.0'
+//}
+//
+//// Java 11 Toolchain setup
+//java {
+//    toolchain {
+//        languageVersion = JavaLanguageVersion.of(17)
+//    }
+//}
+
+
+buildscript {
+    dependencies {
+        classpath("com.android.tools:r8:8.2.47")
+    }
+}
+
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -6,58 +301,92 @@ if (localPropertiesFile.exists()) {
     }
 }
 
-def flutterRoot = localProperties.getProperty('flutter.sdk')
-if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
-}
-
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
-    flutterVersionCode = '1'
+    flutterVersionCode = '16'
 }
 
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
-    flutterVersionName = '1.0'
+    flutterVersionName = '2.2'
 }
 
-apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'kotlin-android'
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
 
 android {
-    compileSdkVersion 33
+    namespace 'com.kisaanstation.kisaanstation'
+    compileSdkVersion 34
+    kotlinOptions {
+//        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = "17"
+    }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
+//    ndkVersion = flutter.ndkVersion
+    ndkVersion = "25.1.8937393"
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
-
+    lintOptions {
+        disable 'InvalidPackage'
+        checkReleaseBuilds false //<- add this line
+        disable 'ResourceLinkingFailed'
+    }
+    dexOptions {
+        preDexLibraries = false
+    }
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.kisaanstation.kisaanstation"
-        minSdkVersion 21
-        targetSdkVersion 33
+        minSdkVersion 24
+        targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        //comment this line when app is in debug mode it's only works for relase apk
+        ndk {
+            abiFilters "armeabi-v7a","arm64-v8a","x86","x86_64"
+        }
     }
+//    signingConfigs {
+//        release {
+//            keyAlias keystoreProperties['keyAlias']
+//            keyPassword keystoreProperties['keyPassword']
+//            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+//            //storeFile file(keystoreProperties['storeFile'])
+//            storePassword keystoreProperties['storePassword']
+//        }
+
+//    }
 
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
+//            signingConfig signingConfigs.release
+//            minifyEnabled false
+//            useProguard true
+            //signingConfig signingConfigs.debug
+            //useProguard true
+            minifyEnabled false
+            shrinkResources false
+
             signingConfig signingConfigs.debug
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), ' proguard-rules.pro'
         }
+    }
+
+    aaptOptions {
+        noCompress 'mp3', 'png', 'jpg'
     }
 }
 
@@ -66,8 +395,14 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation platform('com.google.firebase:firebase-bom:30.1.0')
-    implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-dynamic-links:16.0.1'
-}
+//    implementation platform('com.google.firebase:firebase-bom:31.0.2')
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
+    implementation 'androidx.core:core-ktx:1.10.1' // Example version
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
+    implementation 'com.google.code.gson:gson:2.8.9' // Add this line
+    implementation 'com.google.firebase:firebase-auth'
+    implementation ('com.android.support:multidex:2.0.1') {
+        exclude module: "play-services-safetynet"
+    }
+} 
+

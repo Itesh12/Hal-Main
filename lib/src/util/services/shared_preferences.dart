@@ -16,7 +16,7 @@ class UserPreferences {
   static const _referral = 'referral';
   static const _mandiState = '_mandiState';
   static const _sellerId = "_sellerId";
-  static const _selectedKisaanStation = 'selectedKisaanStation';
+  // static const _selectedKisaanStation = 'selectedKisaanStation';
   static const _sellerType = "sellerType";
   static const _mobileNo = "mobileNo";
 

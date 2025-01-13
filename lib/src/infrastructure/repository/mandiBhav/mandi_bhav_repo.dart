@@ -16,8 +16,8 @@ class MandiBhavRepository {
   Future<MandiBhavModel> getMandiBhavbyState(String state) async {
     late MandiBhavModel mandiBhav;
     final location = await ref.read(locationProvider).getLocation();
-    final double? lat = location?.latitude;
-    final double? lon = location?.longitude;
+    // final double? lat = location?.latitude;
+    // final double? lon = location?.longitude;
 
     if (location != null) {
       final res = await ref.read(apiProvider).get(
@@ -28,7 +28,6 @@ class MandiBhavRepository {
         success: (source) {
           mandiBhav = MandiBhavModel.fromJson(source);
           debugPrint(source.toString());
-
 
           debugPrint(mandiBhav.toString());
         },
@@ -61,7 +60,6 @@ class MandiBhavRepository {
         success: (source) {
           mandiBhav = MandiBhavModel.fromJson(source);
           debugPrint(source.toString());
-
 
           debugPrint(mandiBhav.toString());
         },
