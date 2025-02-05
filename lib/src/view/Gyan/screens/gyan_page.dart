@@ -38,44 +38,46 @@ class GyanPage extends StatelessWidget {
         return CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
-                child: Padding(
-              padding: EdgeInsets.only(
-                  right: 20.w, left: 20.w, top: 30.h, bottom: 40.h),
-              child: Row(
-                children: [
-                  Text(
-                    AppLocalizations.of(context)!.top_news,
-                    style: textTheme.titleMedium!
-                        .copyWith(color: brown, fontWeight: FontWeight.bold),
-                  ),
-                  // const Spacer(),
-                  // Text(
-                  //   AppLocalizations.of(context)!.view_all,
-                  //   style: textTheme.bodyMedium!.copyWith(color: primary),
-                  // ),
-                ],
+              child: Padding(
+                padding: EdgeInsets.only(
+                    right: 20.w, left: 20.w, top: 30.h, bottom: 40.h),
+                child: Row(
+                  children: [
+                    Text(
+                      AppLocalizations.of(context)!.top_news,
+                      style: textTheme.titleMedium!
+                          .copyWith(color: brown, fontWeight: FontWeight.bold),
+                    ),
+                    // const Spacer(),
+                    // Text(
+                    //   AppLocalizations.of(context)!.view_all,
+                    //   style: textTheme.bodyMedium!.copyWith(color: primary),
+                    // ),
+                  ],
+                ),
               ),
-            )),
+            ),
             const SliverToBoxAdapter(child: NewsCarausal()),
             SliverToBoxAdapter(
-                child: Padding(
-              padding: EdgeInsets.only(
-                  right: 20.w, left: 20.w, top: 30.h, bottom: 40.h),
-              child: Row(
-                children: [
-                  Text(
-                    AppLocalizations.of(context)!.latest_news,
-                    style: textTheme.titleMedium!
-                        .copyWith(color: brown, fontWeight: FontWeight.bold),
-                  ),
-                  // const Spacer(),
-                  // Text(
-                  //   AppLocalizations.of(context)!.view_all,
-                  //   style: textTheme.bodyMedium!.copyWith(color: primary),
-                  // ),
-                ],
+              child: Padding(
+                padding: EdgeInsets.only(
+                    right: 20.w, left: 20.w, top: 30.h, bottom: 40.h),
+                child: Row(
+                  children: [
+                    Text(
+                      AppLocalizations.of(context)!.latest_news,
+                      style: textTheme.titleMedium!
+                          .copyWith(color: brown, fontWeight: FontWeight.bold),
+                    ),
+                    // const Spacer(),
+                    // Text(
+                    //   AppLocalizations.of(context)!.view_all,
+                    //   style: textTheme.bodyMedium!.copyWith(color: primary),
+                    // ),
+                  ],
+                ),
               ),
-            )),
+            ),
             const SliverToBoxAdapter(child: LatestNews()),
           ],
         );

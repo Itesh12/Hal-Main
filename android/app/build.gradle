@@ -320,18 +320,16 @@ if (keystorePropertiesFile.exists()) {
 android {
     namespace 'com.kisaanstation.kisaanstation'
     compileSdkVersion 34
-    kotlinOptions {
-//        jvmTarget = JavaVersion.VERSION_17.toString()
-        jvmTarget = "17"
-    }
-
     compileOptions {
         coreLibraryDesugaringEnabled true
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 //    ndkVersion = flutter.ndkVersion
-    ndkVersion = "25.1.8937393"
+    ndkVersion flutter.ndkVersion
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -346,7 +344,7 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.kisaanstation.kisaanstation"
-        minSdkVersion 24
+        minSdkVersion 23
         targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -357,16 +355,15 @@ android {
             abiFilters "armeabi-v7a","arm64-v8a","x86","x86_64"
         }
     }
-//    signingConfigs {
-//        release {
-//            keyAlias keystoreProperties['keyAlias']
-//            keyPassword keystoreProperties['keyPassword']
-//            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-//            //storeFile file(keystoreProperties['storeFile'])
-//            storePassword keystoreProperties['storePassword']
-//        }
-
-//    }
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            //storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
 
     buildTypes {
         release {
@@ -380,7 +377,7 @@ android {
             minifyEnabled false
             shrinkResources false
 
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
 //            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), ' proguard-rules.pro'
         }
     }

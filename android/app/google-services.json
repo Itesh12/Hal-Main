@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "185934436559",
     "project_id": "hal-app-bdd31",
-    "storage_bucket": "hal-app-bdd31.appspot.com"
+    "storage_bucket": "hal-app-bdd31.firebasestorage.app"
   },
   "client": [
     {

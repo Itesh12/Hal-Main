@@ -209,11 +209,11 @@ class _SignUpCommonState extends State<SignUpCommon> {
                   72.verticalSpace,
                   const PrivacyPolicy(),
                   20.verticalSpace,
-                  Image.asset(
-                    'assets/images/droneacharya_logo.png',
-                    height: 130.h,
-                    width: 200.w,
-                  ),
+                  // Image.asset(
+                  //   'assets/images/droneacharya_logo.png',
+                  //   height: 130.h,
+                  //   width: 200.w,
+                  // ),
                 ],
               ),
             )

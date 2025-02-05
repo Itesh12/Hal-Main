@@ -36,7 +36,6 @@ class _LatestNewsState extends ConsumerState<LatestNews> {
   //   ),
   //
   // ];
-
   @override
   Widget build(BuildContext context) {
     return Consumer(builder: (context, ref, child) {

@@ -49,9 +49,12 @@ class ApiProvider {
       _dio.interceptors.add(PrettyDioLogger(requestBody: true));
     }
 
-    _baseUrl = "https://api.daybestgroup.com";
+    // _baseUrl = "https://api.daybestgroup.com";
+    // _baseUrl = "https://backend-api-eight-mu.vercel.app/api";
 
-    _baseUrl = "http://3.110.212.207:5000";
+    _baseUrl = "http://13.126.247.129:3001/api";
+
+    // _baseUrl = "http://3.110.212.207:5000";
 
     // _baseUrl = "http://192.168.29.100:5000";
 
@@ -98,6 +101,8 @@ class ApiProvider {
     };
 
     final _appToken = UserPreferences.authToken;
+
+    print("---------->${_appToken}");
 
     if (_appToken.isNotEmpty) {
       headers['Authorization'] = _appToken;
